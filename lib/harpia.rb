@@ -12,9 +12,9 @@ module Harpia
       "/home/natanjmai/Documents/harpia_2/harpia/TODO.md"
     end
 
-    def open_todo_file
+    def new_todo(log = '\n')
       File.open(self.todo_path, 'a') do
-        |f| f.write "- #{Time.now} User logged in\n"
+        |f| f.write log + "\n"
       end
     end
   end
