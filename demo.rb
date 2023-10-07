@@ -1,11 +1,19 @@
 require_relative 'lib/harpia'
 
+Harpia.config do |c|
+  # c.log_text = 'test'
+end
+
 def method
   puts '=' * 10
-  puts Harpia.todo_path
-  Harpia.new_todo("- #{__callee__} / #{Time.now} User logged in #{__FILE__ }")
+  Harpia.new_todo()
+end
+
+def method_2
+  Harpia.new_todo()
 end
 
 method
+method_2
 method
-method
+Harpia.new_todo
