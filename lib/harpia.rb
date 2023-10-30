@@ -10,30 +10,35 @@ module Harpia
       yield self
     end
 
-    def log_text
-      puts caller.last.methods
-      puts __dir__
-      puts __method__
-
-
-      @log_text || "- #{Time.now.strftime("%d/%m/%Y, %H:%M:%S")} / #{caller.last}"
+    def new_fixme(comments = nil)
+      f = open_file
+      f.write log_text('FIXME', comments)
     end
 
-    ##
-    # - 07/10/2023, 19:55:49 / [`/harpia/demo.rb`](/home/natanjmai/Documents/harpia_2/harpia/demo.rb)
-    def get_caller_file_name
-
-    end
-
-    def new_todo()
-      File.open(self.todo_path, 'a') do
-        |f| f.write log_text + "\n"
-      end
+    def new_todo(comments = nil)
+      f = open_file
+      f.write log_text('TODO', comments)
     end
 
     private
       def todo_path
         "/home/natanjmai/Documents/harpia_2/harpia/TODO.md"
+      end
+
+      def file_location
+        caller.last.gsub("`", "").gsub("'", "")
+      end
+
+      def open_file
+        File.open(self.todo_path, 'a')
+      end
+
+      def log_text(action = '', comments = nil)
+        path = file_location || ''
+
+        str = @log_text || "* `#{action}` - #{Time.now.strftime("%d/%m/%Y, %H:%M:%S")} / #{path}\n"
+        str << "_#{comments.to_s}_\n" unless comments.nil?
+        str << "---" + "\n\n\r"
       end
   end
 end

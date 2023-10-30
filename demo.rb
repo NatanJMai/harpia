@@ -5,12 +5,13 @@ Harpia.config do |c|
 end
 
 def method
-  puts '=' * 10
-  Harpia.new_todo()
+  Harpia.new_todo('We need to do this.')
 end
 
 def method_2
-  Harpia.new_todo()
+  Harpia.new_fixme
+  Harpia.new_fixme
+  Harpia.new_fixme('fix me please')
 end
 
 method
