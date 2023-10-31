@@ -4,10 +4,14 @@ require_relative "harpia/version"
 
 module Harpia
   class << self
-    attr_writer :log_text
+    attr_writer :log_text, :export_opts
 
     def config
       yield self
+    end
+
+    def files_to_export
+      @export_opts.select{|elem| elem[:export] }
     end
 
     def new_fixme(comments = nil)
