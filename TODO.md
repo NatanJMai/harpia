@@ -8,25 +8,15 @@
 
 * `FIXME` - 30/10/2023, 22:38:38 / /home/natanjmai/Documents/harpia_2/harpia/demo.rb:18:in <main>
 _fix me please_
----
-<style>
-r { color: Red }
-o { color: Orange }
-g { color: Green }
-</style>
-
-- <r>TODO:</r> Important thing to do
-- <o>TODO:</o> Less important thing to do
-- <g>DONE:</g> Breath deeply 
 
 
 * `TODO` - 30/10/2023, 22:38:38 / /home/natanjmai/Documents/harpia_2/harpia/demo.rb:19:in <main>
 _We need to do this._
----
+
 
 
 * `TODO` - 30/10/2023, 22:38:38 / /home/natanjmai/Documents/harpia_2/harpia/demo.rb:20:in <main>
----
+
 
 
 * `TODO` - 31/10/2023, 21:52:39 / /home/natanjmai/Documents/harpia_2/harpia/demo.rb:21:in <main>
