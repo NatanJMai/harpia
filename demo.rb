@@ -1,7 +1,7 @@
 require_relative 'lib/harpia'
 
 Harpia.config do |c|
-  # c.log_text = 'test'
+  c.file_path = "tmp"
   c.export_opts = [
     { format: :md, filename: 'TODO', export: true },
     { format: :json, filename: 'TODO', export: true },

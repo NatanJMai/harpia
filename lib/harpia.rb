@@ -4,7 +4,7 @@ require_relative "harpia/version"
 
 module Harpia
   class << self
-    attr_writer :log_text, :export_opts
+    attr_writer :log_text, :export_opts, :file_path
 
     def config
       yield self
@@ -26,7 +26,7 @@ module Harpia
 
     private
       def todo_path
-        "/home/natanjmai/Documents/harpia_2/harpia/TODO.md"
+        "#{@file_path}/TODO.md" || "tmp/TODO.md"
       end
 
       def file_location
@@ -34,6 +34,7 @@ module Harpia
       end
 
       def open_file
+        puts todo_path
         File.open(self.todo_path, 'a')
       end
 
